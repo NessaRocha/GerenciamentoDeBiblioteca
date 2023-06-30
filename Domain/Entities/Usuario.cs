@@ -9,5 +9,6 @@ namespace GerenciamentoDeBiblioteca.Domain.Entities
     {
         public string Nome { get; set; }
 
+
     }
 }

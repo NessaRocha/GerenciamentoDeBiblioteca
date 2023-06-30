@@ -2,18 +2,17 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using GerenciamentoDeBiblioteca.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
+using GerenciamentoDeBiblioteca.Domain.Entities;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace GerenciamentoDeBiblioteca.Data.Types
 {
-    public class AutorMap : IEntityTypeConfiguration<Autor>
+    public class UsuarioMap : IEntityTypeConfiguration<Usuario>
     {
-        public void Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder<Autor> builder)
+        public void Configure(EntityTypeBuilder<Usuario> builder)
         {
-
-            builder.ToTable("autor");
+            builder.ToTable("usuario");
 
             builder.Property(i => i.Id)
                 .HasColumnName("id");
@@ -21,7 +20,8 @@ namespace GerenciamentoDeBiblioteca.Data.Types
             builder.Property(i => i.Nome).HasColumnName("nome");
             builder.Property(i => i.Nome).IsRequired();
 
-            builder.HasMany<Livro>(i => i.Livros).WithOne(i => i.Autor);
+
+
 
         }
     }

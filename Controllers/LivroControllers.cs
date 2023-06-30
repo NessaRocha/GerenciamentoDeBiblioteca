@@ -63,12 +63,7 @@ namespace GerenciamentoDeBiblioteca.Controllers
                     autor = new Autor { Id = autorId };
                     _autorRepository.AddAutor(autor);
 
-                    // Crie um objeto AutorLivro e atribua os valores apropriados
-                    var autorLivro = new AutorLivro
-                    {
-                        LivroId = livro.Id,
-                        AutorId = autor.Id
-                    };
+
 
                     // Adicione o objeto AutorLivro repositório IAutorLivroRepository
                     _autorLivroRepository.AddAutor(autor);

@@ -9,7 +9,7 @@ namespace GerenciamentoDeBiblioteca.Domain.Entities
     {
         public string Nome { get; set; }
 
-        public IList<AutorLivro> Livros { get; set; }
+        public IList<Livro> Livros { get; set; }
 
     }
 }
