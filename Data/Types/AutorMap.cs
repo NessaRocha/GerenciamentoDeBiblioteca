@@ -21,7 +21,7 @@ namespace GerenciamentoDeBiblioteca.Data.Types
             builder.Property(i => i.Nome).HasColumnName("nome");
             builder.Property(i => i.Nome).IsRequired();
 
-            builder.HasMany<Livro>(i => i.Livros).WithOne(i => i.Autor);
+
 
         }
     }

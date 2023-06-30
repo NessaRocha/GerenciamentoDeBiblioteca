@@ -8,7 +8,7 @@ namespace GerenciamentoDeBiblioteca.Domain.Entities
     public class Usuario : Entity
     {
         public string Nome { get; set; }
-
+        public IList<Livro> Livros { get; set; }
 
     }
 }
