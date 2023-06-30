@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GerenciamentoDeBiblioteca.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20230630183752_InitialMigration")]
+    [Migration("20230630185418_InitialMigration")]
     partial class InitialMigration
     {
         /// <inheritdoc />
@@ -81,7 +81,7 @@ namespace GerenciamentoDeBiblioteca.Migrations
             modelBuilder.Entity("GerenciamentoDeBiblioteca.Domain.Entities.Livro", b =>
                 {
                     b.HasOne("GerenciamentoDeBiblioteca.Domain.Entities.Usuario", "AlugadoPor")
-                        .WithMany()
+                        .WithMany("Livros")
                         .HasForeignKey("AlugadoPorId");
 
                     b.HasOne("GerenciamentoDeBiblioteca.Domain.Entities.Autor", "Autor")
@@ -94,6 +94,11 @@ namespace GerenciamentoDeBiblioteca.Migrations
                 });
 
             modelBuilder.Entity("GerenciamentoDeBiblioteca.Domain.Entities.Autor", b =>
+                {
+                    b.Navigation("Livros");
+                });
+
+            modelBuilder.Entity("GerenciamentoDeBiblioteca.Domain.Entities.Usuario", b =>
                 {
                     b.Navigation("Livros");
                 });

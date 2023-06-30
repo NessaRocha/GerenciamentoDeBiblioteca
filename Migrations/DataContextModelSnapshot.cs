@@ -78,7 +78,7 @@ namespace GerenciamentoDeBiblioteca.Migrations
             modelBuilder.Entity("GerenciamentoDeBiblioteca.Domain.Entities.Livro", b =>
                 {
                     b.HasOne("GerenciamentoDeBiblioteca.Domain.Entities.Usuario", "AlugadoPor")
-                        .WithMany()
+                        .WithMany("Livros")
                         .HasForeignKey("AlugadoPorId");
 
                     b.HasOne("GerenciamentoDeBiblioteca.Domain.Entities.Autor", "Autor")
@@ -91,6 +91,11 @@ namespace GerenciamentoDeBiblioteca.Migrations
                 });
 
             modelBuilder.Entity("GerenciamentoDeBiblioteca.Domain.Entities.Autor", b =>
+                {
+                    b.Navigation("Livros");
+                });
+
+            modelBuilder.Entity("GerenciamentoDeBiblioteca.Domain.Entities.Usuario", b =>
                 {
                     b.Navigation("Livros");
                 });
